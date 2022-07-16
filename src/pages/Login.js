@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
+import Error from "./Error";
 
 const Login = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -23,6 +24,9 @@ const Login = () => {
   console.log(error);
   if (error === 200) {
     navigated("/home");
+  }
+  if (error === 201 || error === 500) {
+    return <Error></Error>
   }
   // GET /ccadmin/v1/orders?limit=200&offset=400
   return (
