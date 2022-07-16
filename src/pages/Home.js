@@ -3,7 +3,7 @@ import React from "react";
 const Home = () => {
   return (
     <div>
-      <aside className="bg-pink-200 h-96 flex items-center">
+      <aside className="bg-pink-200 py-40 flex items-center">
         <div className="p-10 px-32 text-center">
           <h1 className="text-4xl mb-4">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
