@@ -21,7 +21,7 @@ const Ragister = () => {
     navigated("/login");
   };
   return (
-    <div className="flex justify-center mt-40">
+    <div className="flex justify-center mt-10">
       <div className="w-1/2 bg-slate-400 rounded-lg p-5">
         <div className="px-10">
           <h1 className="text-3xl text-center pb-4">Ragister here</h1>
@@ -56,7 +56,7 @@ const Ragister = () => {
             {...register("password", { required: true })}
           />
           <br />
-          <input className="btn btn-sm w-1/4 mx-auto" type="submit" />
+          <input className="btn btn-sm w-2/4 mx-auto" type="submit" />
         </form>
       </div>
     </div>
