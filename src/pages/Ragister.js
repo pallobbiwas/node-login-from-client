@@ -1,7 +1,9 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 const Ragister = () => {
+  const navigated = useNavigate();
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
     console.log(data);
@@ -16,6 +18,7 @@ const Ragister = () => {
       .then((data) => console.log(data));
 
     reset();
+    navigated("/login");
   };
   return (
     <div className="flex justify-center mt-40">
@@ -32,6 +35,18 @@ const Ragister = () => {
             placeholder="Type here email"
             className="input input-bordered input-primary w-3/4 mx-auto"
             {...register("email", { required: true })}
+          />
+          <br />
+          <input
+            placeholder="Type here name"
+            className="input input-bordered input-primary w-3/4 mx-auto"
+            {...register("name", { required: true })}
+          />
+          <br />
+          <input
+            placeholder="Type here phone number"
+            className="input input-bordered input-primary w-3/4 mx-auto"
+            {...register("number", { required: true })}
           />
           <br />
           <input
