@@ -8,7 +8,7 @@ const Login = () => {
   const [error, setError] = useState("");
   const navigated = useNavigate();
   const onSubmit = (data) => {
-    fetch("http://localhost:5000/login", {
+    fetch("https://arcane-shore-47477.herokuapp.com/login", {
       method: "POST",
       headers: {
         "Content-type": "application/json",

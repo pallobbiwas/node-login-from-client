@@ -7,7 +7,7 @@ const Ragister = () => {
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (data) => {
     console.log(data);
-    fetch("http://localhost:5000/user", {
+    fetch("https://arcane-shore-47477.herokuapp.com/user", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
