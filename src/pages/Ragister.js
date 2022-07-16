@@ -30,13 +30,13 @@ const Ragister = () => {
         >
           <input
             placeholder="Type here email"
-            class="input input-bordered input-primary w-3/4 mx-auto"
+            className="input input-bordered input-primary w-3/4 mx-auto"
             {...register("email", { required: true })}
           />
           <br />
           <input
             placeholder="Type here password"
-            class="input input-bordered input-primary w-3/4 mx-auto "
+            className="input input-bordered input-primary w-3/4 mx-auto "
             type="password"
             {...register("password", { required: true })}
           />

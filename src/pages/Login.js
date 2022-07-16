@@ -1,45 +1,51 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 
 const Login = () => {
+  const { register, handleSubmit, reset } = useForm();
+  const onSubmit = (data) => {
+    console.log(data);
+    fetch("http://localhost:5000/login", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((res) => res.json())
+      .then((data) => console.log(data));
+
+    reset();
+  };
+  // GET /ccadmin/v1/orders?limit=200&offset=400
   return (
-    <div>
-      <div class="hero min-h-screen bg-base-200">
-        <div class="hero-content flex-col lg:flex-row-reverse w-full">
-          <div class="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-            <div class="card-body">
-              <div class="form-control">
-                <label class="label">
-                  <span class="label-text">Email</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="email"
-                  class="input input-bordered"
-                />
-              </div>
-              <div class="form-control">
-                <label class="label">
-                  <span class="label-text">Password</span>
-                </label>
-                <input
-                  type="text"
-                  placeholder="password"
-                  class="input input-bordered"
-                />
-                <label class="label">
-                  <a href="#" class="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
-                </label>
-              </div>
-              <div class="form-control mt-6">
-                <button class="btn btn-primary">Login</button>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div className="flex justify-center mt-40">
+    <div className="w-1/2 bg-slate-400 rounded-lg p-5">
+      <div className="px-10">
+        <h1 className="text-3xl text-center pb-4">Login here</h1>
+        <hr />
       </div>
+      <form
+        className="mx-auto flex flex-col p-5"
+        onSubmit={handleSubmit(onSubmit)}
+      >
+        <input
+          placeholder="Type here email"
+          className="input input-bordered input-primary w-3/4 mx-auto"
+          {...register("email", { required: true })}
+        />
+        <br />
+        <input
+          placeholder="Type here password"
+          className="input input-bordered input-primary w-3/4 mx-auto "
+          type="password"
+          {...register("password", { required: true })}
+        />
+        <br />
+        <input className="btn btn-sm w-1/4 mx-auto" type="submit" />
+      </form>
     </div>
+  </div>
   );
 };
 
