@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <div>
       <aside className="bg-pink-200 py-40 flex items-center">
-        <div className="p-10 px-32 text-center">
+        <div className="p-10 md:px-32 text-center">
           <h1 className="text-4xl mb-4">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto,
             excepturi?
